@@ -1,0 +1,17 @@
+<div class="paginator-container">
+  <a class="paginator-link" *ngIf="links.first" [routerLink]="['/page',1]">
+    FIRST
+  </a>
+  <a class="paginator-link" *ngIf="links.prev" [routerLink]="['/page',links.prev]">
+    {{'<<'}}
+  </a>
+  <a class="paginator-link" *ngFor="let page of links.pages" [routerLink]="['/page', page]" routerLinkActive="active">
+    {{page}}
+  </a>
+  <a class="paginator-link" *ngIf="links.next" [routerLink]="['/page',links.next]">
+    {{'>>'}}
+  </a>
+  <a class="paginator-link"  *ngIf="links.last" [routerLink]="['/page',links.last]" >
+    LAST
+  </a>
+</div>

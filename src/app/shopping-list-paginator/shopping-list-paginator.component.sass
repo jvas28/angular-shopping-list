@@ -1,0 +1,38 @@
+$break-phone: 420px
+.paginator-container
+  display: flex
+  flex-direction: row
+  width: 100%
+  justify-content: center
+  font-family: Raleway, serif
+.paginator-container>.paginator-link
+  padding: 10px
+  margin: 1px
+  background: #3a5074
+  color: white
+  cursor: pointer
+  text-decoration: none
+  min-width: 20px
+  text-align: center
+  font-size: 12px
+  @media screen and (max-width: $break-phone)
+    font-size: 10px
+    min-width: 12px
+
+.paginator-container>.paginator-link.active
+  background: black
+  color: white
+  cursor: pointer
+  text-decoration: none
+
+.paginator-container>.paginator-link:hover
+  background: white
+  color: #3a5074
+.paginator-container>.paginator-link:first-child
+  border-radius: 5px 0 0 5px
+.paginator-container>.paginator-link:last-child
+  border-radius: 0 5px 5px 0
+
+
+
+
