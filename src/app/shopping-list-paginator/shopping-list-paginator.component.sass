@@ -2,9 +2,13 @@ $break-phone: 420px
 .paginator-container
   display: flex
   flex-direction: row
-  width: 100%
+  width: 70%
   justify-content: center
   font-family: Raleway, serif
+  position: fixed
+  bottom: 0
+  @media screen and (max-width: $break-phone)
+    width: 100%
 .paginator-container>.paginator-link
   padding: 10px
   margin: 1px
@@ -20,8 +24,8 @@ $break-phone: 420px
     min-width: 12px
 
 .paginator-container>.paginator-link.active
-  background: black
-  color: white
+  background: #c1d8f6
+  color: #3a5074
   cursor: pointer
   text-decoration: none
 

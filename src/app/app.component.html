@@ -1,5 +1,13 @@
-<div>
-  <h1>My Shopping List</h1>
+<header>
+  <h1>SHOPPING LIST</h1>
+</header>
+<div class="page-container">
+  <div class="filter-container">
+    <app-shopping-list-filter-bar  ></app-shopping-list-filter-bar>
+  </div>
+  <div class="list-container">
+    <router-outlet>
+    </router-outlet>
+  </div>
+
 </div>
-<router-outlet>
-</router-outlet>

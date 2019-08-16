@@ -1,5 +1,29 @@
 $font-stack:    Raleway, serif !important
-
+$break-phone: 420px
 html, body, h1, h2, h3
   font-family: $font-stack
+header
+  width: 100%
+  color: #3a5074
+  border-bottom: 1px solid #3a5074
+.page-container
+  display: flex
+  @media screen and (max-width: $break-phone)
+    display: block
+.list-component
+  display: flex
+  flex-direction: column
+  flex-wrap: wrap
+  @media screen and (max-width: $break-phone)
+    display: block
+.filter-container
+  width: 30%
+  height: 100%
+  @media screen and (max-width: $break-phone)
+    width: 100%
+    display: block
+.list-container
+  width: 70%
+  @media screen and (max-width: $break-phone)
+    width: 100%
 

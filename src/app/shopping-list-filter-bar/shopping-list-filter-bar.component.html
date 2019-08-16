@@ -1,1 +1,29 @@
-<p>shopping-list-filter-bar works!</p>
+<button id='button-show-filter' (click)="toggleFilterView()" >{{showFilters ? 'Hide':'Show'}} Filters</button>
+<div class="filter-bar" [class.active]="showFilters">
+  <div *ngIf="filterStructure.price" class="filter-bar-item">
+    <h1>Price</h1>
+    <div *ngFor="let range of filterStructure.price">
+      <input type="checkbox"  (change)="onPriceSelect(range)" [checked]="isPriceSelected(range)" ><label>{{range[1] > 100 ? 'above' : ''}} {{ range[0] < 1 ? '<=' : range[0] | currency}} {{ range[1] > 100 ? '' : range[1] | currency}}</label>
+    </div>
+  </div>
+  <div *ngIf="filterStructure.categories" class="filter-bar-item">
+    <h1>Categories</h1>
+    <div *ngFor="let categoryId of filterStructure.categories">
+      <input type="checkbox"  (change)="onAttributeSelect('categories', categoryId)" [checked]="isAttributeSelected('categories', categoryId)"  ><label>category-{{categoryId}}</label>
+    </div>
+  </div>
+  <div *ngIf="filterStructure.size" class="filter-bar-item">
+    <h1>Size</h1>
+    <div *ngFor="let size of filterStructure.size">
+      <input type="checkbox" (change)="onAttributeSelect('size', size)" [checked]="isAttributeSelected('size', size)"  ><label>size-{{size}}</label>
+    </div>
+  </div>
+
+  <div *ngIf="filterStructure.material" class="filter-bar-item">
+    <h1>Material</h1>
+    <div *ngFor="let material of filterStructure.material">
+      <input type="checkbox" (change)="onAttributeSelect('material', material)" [checked]="isAttributeSelected('material', material)"  ><label>material-{{material}}</label>
+    </div>
+  </div>
+
+</div>

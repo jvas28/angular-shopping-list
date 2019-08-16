@@ -1,34 +1,25 @@
 import { Component, Input, OnInit } from '@angular/core';
-import { ProductService } from '../service/product.service';
+import { ProductService } from '../services/product.service';
 import { ActivatedRoute } from '@angular/router';
 
 @Component({
   selector: 'app-shopping-list',
   templateUrl: './shopping-list.component.html',
   styleUrls: ['./shopping-list.component.sass'],
-  providers:  [ ProductService ],
 })
 export class ShoppingListComponent implements OnInit {
 
-  products: Array<any>;
-  productProvider;
+  public products;
   currentPage: number;
-  meta: any;
-
-  constructor(private service: ProductService, private route: ActivatedRoute) {
-    this.productProvider = service;
-    const {data, meta} = service.getProducts();
-    this.products = data;
-    this.meta = meta;
+  constructor(private productService: ProductService, private route: ActivatedRoute) {
+    this.products = productService.currentProductList.subscribe(({page}) => {
+      this.products = page;
+    });
   }
-
   ngOnInit() {
     this.route.params.subscribe(({id: page}) => {
-      this.currentPage = +page || 1
-      const { data, meta} = this.productProvider.getProducts(page, 96);
-      this.products = data;
-      this.meta = meta;
+      this.currentPage = +page || 1;
+      this.productService.updateCurrentPage(page);
     });
-
   }
 }

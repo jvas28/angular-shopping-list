@@ -1,0 +1,20 @@
+$break-phone: 420px
+#button-show-filter
+  display: none
+@media screen and (max-width: $break-phone)
+  .filter-bar
+    display: none
+  .filter-bar.active
+    display: block
+  #button-show-filter
+    display: block
+.filter-bar-item
+  font-family: Raleway, serif
+  padding: 15px
+  background: #f6f6f6
+  margin: 5px
+  border-radius: 10px
+
+.filter-bar-item>h1
+  font-size: 16px
+  font-weight: bolder
