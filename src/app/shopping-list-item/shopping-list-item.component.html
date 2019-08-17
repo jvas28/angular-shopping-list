@@ -1,9 +1,5 @@
-<div class="list-item-container">
-    <div class="list-item-image">
-      <img src="assets/img/product-placeholder.png">
-    </div>
-    <div class="list-item-details">
-      <h3>{{product.name}}</h3>
-      <p>{{product.price | currency}}</p>
-    </div>
-</div>
+<mat-card class="list-container-item">
+    <mat-card-title>{{product.name}}</mat-card-title>
+    <mat-card-subtitle>{{product.price | currency}}</mat-card-subtitle>
+    <img mat-card-image src="assets/img/product-placeholder.png" alt="Photo of a Shiba Inu">
+</mat-card>
