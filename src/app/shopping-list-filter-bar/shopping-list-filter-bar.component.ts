@@ -14,7 +14,7 @@ interface Filter {
   styleUrls: ['./shopping-list-filter-bar.component.sass'],
 })
 export class ShoppingListFilterBarComponent implements OnInit {
-  private filterStructure;
+  public filterStructure;
   private selected: Filter =  {
     price: [],
     categories: [],
