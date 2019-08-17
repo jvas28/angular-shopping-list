@@ -7,7 +7,7 @@
     </div>
   </mat-card>
   <mat-card *ngIf="filterStructure.categories" class="filter-bar-item">
-
+    <mat-card-title>Categories</mat-card-title>
     <div *ngFor="let categoryId of filterStructure.categories">
       <mat-checkbox (change)="onAttributeSelect('categories', categoryId)" [checked]="isAttributeSelected('categories', categoryId)"  >category-{{categoryId}}</mat-checkbox>
     </div>
